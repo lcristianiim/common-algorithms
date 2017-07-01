@@ -10,8 +10,9 @@ public class App
 {
     public static void main( String[] args ) throws IOException {
 
-        FileReaderToArray fileReaderToArray = new FileReaderToArray();
-        int[] array = fileReaderToArray.read("numbers", 1000);
-
+//        String unorderedArrayName = System.getProperty("user.dir") + "/src/data/numbers/numbers";
+//        String orderedArrayName = System.getProperty("user.dir") + "/src/data/numbers/numbers-ordered";
+//
+//        NumbersGenerator.generatorToFile(numbers, unorderedArrayName);
     }
 }
