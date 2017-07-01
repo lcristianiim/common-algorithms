@@ -1,24 +1,58 @@
 package com.common.algorithms;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.time.Instant;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static com.common.algorithms.Utilities.displayTimeNeeded;
 
-class SortAlgorithmsTest {
+@Getter
+@Setter
+public class SortAlgorithmsTest {
+
+    private String tenArray = System.getProperty("user.dir") + "/src/data/10/numbers";
+    private String tenArrayOrdered = System.getProperty("user.dir") + "/src/data/10/numbers-ordered";
+
+    private String tenThousandArray = System.getProperty("user.dir") + "/src/data/10000/numbers";
+    private String tenThousandArrayOrdered = System.getProperty("user.dir") + "/src/data/10000/numbers-ordered";
+
     @Test
     void selectionSort() throws IOException {
-        String arrayName = "numbers";
-        String orderedArrayName = "numbers-ordered";
+        String methodName = "Selection Sort";
 
-        int[] array = FileReaderToArray.read(arrayName, 10000);
-        int[] expected = FileReaderToArray.read(orderedArrayName, 10000);
+        int[] array = FileReaderToArray.read(tenThousandArray, 10000);
+        int[] expected = FileReaderToArray.read(tenThousandArrayOrdered, 10000);
+
+        Instant start = Instant.now();
 
         int[] result = SortAlgorithms.selectionSort(array);
 
+        Instant end = Instant.now();
+
+        displayTimeNeeded(methodName, start, end);
         Assert.assertArrayEquals(result, expected);
     }
+
+    @Test
+    void bubbleSort() throws IOException {
+        String methodName = "Bubble sort";
+
+        int[] array = FileReaderToArray.read(tenThousandArray, 10000);
+        int[] expected = FileReaderToArray.read(tenThousandArrayOrdered, 10000);
+
+        Instant start = Instant.now();
+
+        int[] result = SortAlgorithms.bubbleSort(array);
+
+        Instant end = Instant.now();
+
+        displayTimeNeeded(methodName, start, end);
+        Assert.assertArrayEquals(result, expected);
+    }
+
 
 }
