@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class NumbersGeneratorTest {
     @Test
     void generatorToFile() throws IOException {
-        String unorderedArrayName = "test-numbers";
+        String unorderedArrayName = "../test-numbers";
         String orderedArrayName = "test-numbers-ordered";
 
         NumbersGenerator.generatorToFile(10000, unorderedArrayName);
