@@ -63,7 +63,7 @@ public class SortAlgorithmsTest {
 
         Instant start = Instant.now();
 
-        int[] result = SortAlgorithms.quickSort(array);
+        int[] result = SortAlgorithms.quickSort(array, 0, array.length - 1);
 
         Instant end = Instant.now();
 

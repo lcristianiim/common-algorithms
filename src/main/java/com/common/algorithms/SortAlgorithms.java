@@ -38,8 +38,29 @@ public class SortAlgorithms {
         return array;
     }
 
-    public static int[] quickSort(int[] array) {
+    public static int[] quickSort(int[] array, int lo, int hi) {
+
+        if (lo < hi) {
+            int p = partioning(array, lo, hi);
+            quickSort(array, lo, p - 1);
+            quickSort(array, p + 1, hi);
+        }
 
         return array;
+    }
+
+    private static int partioning(int[] array, int lo, int hi) {
+        int pivot = array[hi];
+        int i = lo - 1;
+
+        for (int j = lo; j <= hi; j++) {
+            if (array[j] <= pivot) {
+                i++;
+                if (i != j) {
+                    exchange(array, i, j);
+                }
+            }
+        }
+        return i;
     }
 }
