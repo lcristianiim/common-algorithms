@@ -1,5 +1,7 @@
 package com.common.algorithms;
 
+import com.common.algorithms.utils.FileReaderToArray;
+import com.common.algorithms.utils.NumbersGenerator;
 import org.junit.Assert;
 import org.junit.Test;
 

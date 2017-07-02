@@ -1,4 +1,4 @@
-package com.common.algorithms;
+package com.common.algorithms.utils;
 
 import java.time.Duration;
 import java.time.Instant;

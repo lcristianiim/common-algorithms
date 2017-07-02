@@ -1,10 +1,7 @@
 package com.common.algorithms;
 
-import java.time.Instant;
-import java.util.Arrays;
-
-import static com.common.algorithms.Utilities.exchange;
-import static com.common.algorithms.Utilities.less;
+import static com.common.algorithms.utils.Utilities.exchange;
+import static com.common.algorithms.utils.Utilities.less;
 
 public class SortAlgorithms {
 
@@ -62,5 +59,16 @@ public class SortAlgorithms {
             }
         }
         return i;
+    }
+
+
+    public static int[] insertionSort(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i; j > 0 && less(array[j], array[j-1]); j--) {
+                exchange(array, j, j-1);
+            }
+        }
+
+        return array;
     }
 }
