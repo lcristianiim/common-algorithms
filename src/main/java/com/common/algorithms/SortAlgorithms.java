@@ -37,4 +37,9 @@ public class SortAlgorithms {
             }
         return array;
     }
+
+    public static int[] quickSort(int[] array) {
+
+        return array;
+    }
 }
