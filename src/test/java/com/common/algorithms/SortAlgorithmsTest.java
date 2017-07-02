@@ -3,7 +3,7 @@ package com.common.algorithms;
 import lombok.Getter;
 import lombok.Setter;
 import org.junit.Assert;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.time.Instant;
@@ -21,7 +21,7 @@ public class SortAlgorithmsTest {
     private String tenThousandArrayOrdered = System.getProperty("user.dir") + "/src/data/10000/numbers-ordered";
 
     @Test
-    void selectionSort() throws IOException {
+    public void selectionSort() throws IOException {
         String methodName = "Selection Sort";
 
         int[] array = FileReaderToArray.read(tenThousandArray, 10000);
@@ -38,7 +38,7 @@ public class SortAlgorithmsTest {
     }
 
     @Test
-    void bubbleSort() throws IOException {
+    public void bubbleSort() throws IOException {
         String methodName = "Bubble sort";
 
         int[] array = FileReaderToArray.read(tenThousandArray, 10000);
@@ -54,5 +54,22 @@ public class SortAlgorithmsTest {
         Assert.assertArrayEquals(result, expected);
     }
 
+    @Test
+    public void quickSort() throws IOException {
+        String methodName = "Quick sort";
+
+        int[] array = FileReaderToArray.read(tenThousandArray, 10000);
+        int[] expected = FileReaderToArray.read(tenThousandArrayOrdered, 10000);
+
+        Instant start = Instant.now();
+
+        int[] result = SortAlgorithms.quickSort(array);
+
+        Instant end = Instant.now();
+
+        displayTimeNeeded(methodName, start, end);
+        Assert.assertArrayEquals(result, expected);
+
+    }
 
 }
