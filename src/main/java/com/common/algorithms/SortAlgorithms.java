@@ -71,4 +71,21 @@ public class SortAlgorithms {
 
         return array;
     }
+
+
+    public static int[] mergeSort(int[] array, int lo, int hi) {
+        if (lo == hi) {
+            return array;
+        }
+
+        int mid = (lo + hi) / 2;
+        mergeSort(array, lo, mid);
+        mergeSort(array, mid, hi);
+        merge(array, lo, mid + 1, hi);
+
+        return array;
+    }
+
+    private static void merge(int[] array, int lo, int i, int hi) {
+    }
 }

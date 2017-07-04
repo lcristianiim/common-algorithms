@@ -93,14 +93,14 @@ public class SortAlgorithmsTest {
 
     @Test
     public void mergeSort() throws IOException {
-        String methodName = "Insertion sort";
+        String methodName = "Merge sort";
 
         int[] array = FileReaderToArray.read(tenThousandArray, 10000);
         int[] expected = FileReaderToArray.read(tenThousandArrayOrdered, 10000);
 
         Instant start = Instant.now();
 
-        int[] result = SortAlgorithms.insertionSort(array);
+        int[] result = SortAlgorithms.mergeSort(array, int lo, int hi);
 
         Instant end = Instant.now();
 
